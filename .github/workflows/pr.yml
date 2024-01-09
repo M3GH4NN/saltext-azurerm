@@ -11,11 +11,10 @@ on:
 jobs:
   call_central_workflow:
     name: CI
-    runs-on: ubuntu-latest  # Specify the runner here if not already set
+    runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: read
-
     steps:
       - name: Set up Azure credentials
         env:
@@ -29,3 +28,8 @@ jobs:
         uses: salt-extensions/central-artifacts/.github/workflows/ci.yml@main
         with:
           setup-vault: true
+          # Pass Azure credentials as inputs to the reusable workflow
+          azure_subscription_id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          azure_tenant_id: ${{ secrets.AZURE_TENANT_ID }}
+          azure_client_id: ${{ secrets.AZURE_CLIENT_ID }}
+          azure_client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
