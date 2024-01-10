@@ -11,7 +11,7 @@ on:
 jobs:
   call_central_workflow:
     name: CI
-    uses: salt-extensions/central-artifacts/.github/workflows/ci.yml@main
+    uses: M3GH4NN/central-artifacts/.github/workflows/ci.yml@main
     with:
       setup-vault: true
     permissions:
