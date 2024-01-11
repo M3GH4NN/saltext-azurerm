@@ -5,7 +5,7 @@ on:
     branches:
       - 'main'  # Run on pushes to main
     tags-ignore:
-      - '*'   # Ignore pushes to tags 
+      - '*'   # Ignore pushes to tags
   pull_request:
 
 jobs:
